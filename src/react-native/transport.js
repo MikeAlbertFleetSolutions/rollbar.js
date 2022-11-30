@@ -1,7 +1,7 @@
-var _ = require('../utility');
-var logger = require('./logger');
+import _ from "../utility";
+import logger from "./logger";
 
-var Buffer = require('buffer/').Buffer;
+import { Buffer as Buffer } from "buffer/";
 
 function Transport(truncation) {
   this.rateLimitExpires = 0;

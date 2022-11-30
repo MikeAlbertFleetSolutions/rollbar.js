@@ -1,4 +1,4 @@
-var _ = require('../utility');
+import _ from "../utility";
 
 function traverse(obj, func, seen) {
   var k, v, i;

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-require('console-polyfill');
-var detection = require('./detection');
-var _ = require('../utility');
+import "console-polyfill";
+import detection from "./detection";
+import _ from "../utility";
 
 function error() {
   var args = Array.prototype.slice.call(arguments, 0);

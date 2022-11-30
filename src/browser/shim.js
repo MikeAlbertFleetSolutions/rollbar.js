@@ -1,5 +1,5 @@
-var globals = require('./globalSetup');
-var wrapGlobals = require('./wrapGlobals');
+import globals from "./globalSetup";
+import wrapGlobals from "./wrapGlobals";
 
 function _wrapInternalErr(f) {
   return function() {
@@ -28,7 +28,7 @@ function Shim(options, wrap) {
   }
 }
 
-var Wrapper = require('./rollbarWrapper');
+import Wrapper from "./rollbarWrapper";
 var ShimImpl = function(options, wrap) {
   return new Shim(options, wrap);
 };

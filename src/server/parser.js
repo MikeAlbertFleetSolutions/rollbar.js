@@ -1,11 +1,11 @@
 'use strict';
 
-var logger = require('./logger');
-var async = require('async');
-var fs = require('fs');
-var lru = require('lru-cache');
-var util = require('util');
-var stackTrace = require('./sourceMap/stackTrace');
+import logger from "./logger";
+import async from "async";
+import fs from "fs";
+import lru from "lru-cache";
+import util from "util";
+import stackTrace from "./sourceMap/stackTrace";
 
 var linesOfContext = 3;
 var tracePattern =

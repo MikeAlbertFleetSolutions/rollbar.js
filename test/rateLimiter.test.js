@@ -3,7 +3,7 @@
 /* globals it */
 /* globals sinon */
 
-var RateLimiter = require('../src/rateLimiter');
+import RateLimiter from "../src/rateLimiter";
 
 describe('RateLimiter()', function() {
   it('should have all of the expected methods', function(done) {

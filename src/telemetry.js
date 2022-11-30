@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 var MAX_EVENTS = 100;
 

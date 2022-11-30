@@ -3,8 +3,8 @@
 /* globals it */
 /* globals sinon */
 
-var API = require('../src/api');
-var utility = require('../src/utility');
+import API from "../src/api";
+import utility from "../src/utility";
 utility.setupJSON();
 
 function TestTransportGenerator() {

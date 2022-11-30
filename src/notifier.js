@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 /*
  * Notifier - the internal object responsible for delegating between the client exposed API, the

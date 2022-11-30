@@ -1,4 +1,4 @@
-const rollbar = require('rollbar');
+import rollbar from "rollbar";
 
 exports.doSomeLog = function(message, req, custom, callback) {
   rollbar.log(message, req, custom, callback);

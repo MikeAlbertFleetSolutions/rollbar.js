@@ -1,17 +1,17 @@
-var Client = require('../rollbar');
-var _ = require('../utility');
-var API = require('../api');
-var logger = require('./logger');
-var globals = require('./globalSetup');
+import Client from "../rollbar";
+import _ from "../utility";
+import API from "../api";
+import logger from "./logger";
+import globals from "./globalSetup";
 
-var Transport = require('./transport');
-var urllib = require('./url');
+import Transport from "./transport";
+import urllib from "./url";
 
-var transforms = require('./transforms');
-var sharedTransforms = require('../transforms');
-var predicates = require('./predicates');
-var sharedPredicates = require('../predicates');
-var errorParser = require('../errorParser');
+import transforms from "./transforms";
+import sharedTransforms from "../transforms";
+import predicates from "./predicates";
+import sharedPredicates from "../predicates";
+import errorParser from "../errorParser";
 
 function Rollbar(options, client) {
   this.options = _.handleOptions(defaultOptions, options, null, logger);
@@ -539,8 +539,8 @@ function _gWindow() {
   return ((typeof window != 'undefined') && window) || ((typeof self != 'undefined') && self);
 }
 
-var defaults = require('../defaults');
-var scrubFields = require('./defaults/scrubFields');
+import defaults from "../defaults";
+import scrubFields from "./defaults/scrubFields";
 
 var defaultOptions = {
   version: defaults.version,

@@ -1,6 +1,6 @@
-var SourceMapConsumer = require('source-map').SourceMapConsumer;
-var path = require('path');
-var fs = require('fs');
+import { SourceMapConsumer as SourceMapConsumer } from "source-map";
+import path from "path";
+import fs from "fs";
 
 /**
  * Uses Node source-map to map transpiled JS stack locations to original

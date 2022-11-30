@@ -1,14 +1,14 @@
 "use strict";
 
-var assert = require('assert');
-var util = require('util');
-var vows = require('vows');
-var sinon = require('sinon');
-var t = require('../src/server/transforms');
+import assert from "assert";
+import util from "util";
+import vows from "vows";
+import sinon from "sinon";
+import t from "../src/server/transforms";
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'test-node-env';
-var rollbar = require('../src/server/rollbar');
-var _ = require('../src/utility');
+import rollbar from "../src/server/rollbar";
+import _ from "../src/utility";
 
 function CustomError(message, nested) {
   rollbar.Error.call(this, message, nested);

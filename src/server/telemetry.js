@@ -1,7 +1,7 @@
-var http = require('http');
-var https = require('https');
-var _ = require('../utility');
-var urlHelpers = require('./telemetry/urlHelpers');
+import http from "http";
+import https from "https";
+import _ from "../utility";
+import urlHelpers from "./telemetry/urlHelpers";
 
 var defaults = {
   network: true,

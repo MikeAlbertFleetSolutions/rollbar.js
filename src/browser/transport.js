@@ -1,6 +1,6 @@
-var _ = require('../utility');
-var makeFetchRequest = require('./transport/fetch');
-var makeXhrRequest = require('./transport/xhr');
+import _ from "../utility";
+import makeFetchRequest from "./transport/fetch";
+import makeXhrRequest from "./transport/xhr";
 
 /*
  * accessToken may be embedded in payload but that should not

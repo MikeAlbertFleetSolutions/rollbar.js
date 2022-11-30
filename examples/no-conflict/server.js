@@ -1,7 +1,7 @@
 /* eslint no-console: 0 */
 
-const path = require('path');
-const express = require('express');
+import path from "path";
+import express from "express";
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;

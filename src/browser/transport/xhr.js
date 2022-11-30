@@ -1,7 +1,7 @@
 /*global XDomainRequest*/
 
-var _ = require('../../utility');
-var logger = require('../logger');
+import _ from "../../utility";
+import logger from "../logger";
 
 function makeXhrRequest(accessToken, url, method, data, callback, requestFactory, timeout) {
   var request;

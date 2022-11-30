@@ -1,5 +1,5 @@
-var _ = require('./utility');
-var traverse = require('./utility/traverse');
+import _ from "./utility";
+import traverse from "./utility/traverse";
 
 function scrub(data, scrubFields, scrubPaths) {
   scrubFields = scrubFields || [];

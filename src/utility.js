@@ -1,4 +1,4 @@
-var merge = require('./merge');
+import merge from "./merge";
 
 var RollbarJSON = {};
 function setupJSON(polyfillJSON) {

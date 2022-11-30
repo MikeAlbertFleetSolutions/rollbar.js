@@ -1,11 +1,11 @@
 /* eslint no-console: 0 */
 
-const path = require('path');
-const express = require('express');
-const webpack = require('webpack');
-const webpackMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const Rollbar = require('rollbar');
+import path from "path";
+import express from "express";
+import webpack from "webpack";
+import webpackMiddleware from "webpack-dev-middleware";
+import webpackHotMiddleware from "webpack-hot-middleware";
+import Rollbar from "rollbar";
 
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
@@ -18,7 +18,7 @@ const rollbar = Rollbar.init({
   handleUncaughtExceptions: true,
   verbose: false
 });
-const other = require('./other');
+import other from "./other";
 
 app.get('/error', function(req, res) {
   req.user_id = "test-user";

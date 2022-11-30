@@ -3,9 +3,9 @@
 /* globals it */
 /* globals sinon */
 
-var _ = require('../src/utility');
-var utility = require('../src/utility');
-var polyfillJSON = require('../vendor/JSON-js/json3');
+import _ from "../src/utility";
+import utility from "../src/utility";
+import polyfillJSON from "../vendor/JSON-js/json3";
 
 utility.setupJSON();
 
@@ -416,7 +416,7 @@ describe('merge', function() {
   });
 });
 
-var traverse = require('../src/utility/traverse');
+import traverse from "../src/utility/traverse";
 describe('traverse', function() {
   describe('should call the func for every key,value', function() {
     it('simple object', function(done) {
@@ -582,7 +582,7 @@ describe('addParamsAndAccessTokenToPath', function() {
 });
 
 describe('json3', function() {
-  var setupCustomJSON = require('../vendor/JSON-js/json3.js');
+import setupCustomJSON from "../vendor/JSON-js/json3.js";
   it('should replace stringify if not there', function() {
     var j = {};
     setupCustomJSON(j);
@@ -723,7 +723,7 @@ describe('set', function() {
   });
 });
 
-var scrub = require('../src/scrub');
+import scrub from "../src/scrub";
 describe('scrub', function() {
   it('should not redact fields that are okay', function() {
     var data = {

@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
-var vows = require('vows');
-var sinon = require('sinon');
+import assert from "assert";
+import vows from "vows";
+import sinon from "sinon";
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'test-node-env';
-var Rollbar = require('../src/server/rollbar');
-var logger = require('../src/server/logger');
-var Locals = require('../src/server/locals');
-var localsFixtures = require('./fixtures/locals.fixtures');
+import Rollbar from "../src/server/rollbar";
+import logger from "../src/server/logger";
+import Locals from "../src/server/locals";
+import localsFixtures from "./fixtures/locals.fixtures";
 
 var nodeMajorVersion = process.versions.node.split('.')[0];
 

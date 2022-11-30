@@ -1,11 +1,11 @@
-var path = require('path');
-var webpack = require('webpack');
-var defaults = require('./defaults');
-var browserStackBrowsers = require('./browserstack.browsers');
+import { resolve } from 'path';
+import { DefinePlugin } from 'webpack';
+import defaults from './defaults';
+import { filter } from './browserstack.browsers';
 
-var defaultsPlugin = new webpack.DefinePlugin(defaults);
+var defaultsPlugin = new DefinePlugin(defaults);
 
-var allBrowsers = browserStackBrowsers.filter('bs_all');
+var allBrowsers = filter('bs_all');
 var allBrowsersByBrowser = {
   // Travis needs the --no-sandbox option,
   // so add as a custom launcher to be used as the default browser.
@@ -19,7 +19,7 @@ allBrowsers.forEach(function(browser) {
 });
 
 
-module.exports = function (config) {
+export default function (config) {
   config.set({
     browsers: ['ChromeNoSandbox'],
 
@@ -89,7 +89,7 @@ module.exports = function (config) {
             loader: 'eslint-loader',
             exclude: [/node_modules/, /vendor/, /lib/, /dist/],
             options: {
-              configFile: path.resolve(__dirname, '.eslintrc')
+              configFile: resolve(__dirname, '.eslintrc')
             }
           },
           {

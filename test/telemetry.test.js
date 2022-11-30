@@ -3,7 +3,7 @@
 /* globals it */
 /* globals sinon */
 
-var Telemeter = require('../src/telemetry');
+import Telemeter from "../src/telemetry";
 
 describe('Telemetry()', function() {
   it('should have all of the expected methods', function(done) {

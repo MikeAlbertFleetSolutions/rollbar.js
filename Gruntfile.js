@@ -9,24 +9,24 @@
 
 'use strict';
 
-var glob = require('glob');
-var path = require('path');
-var pkg = require('./package.json');
-var fs = require('fs');
+import { sync } from 'glob';
+import { basename } from 'path';
+import pkg, { version as _version } from './package.json';
+import { readFileSync } from 'fs';
 
-var webpackConfig = require('./webpack.config.js');
-var browserStackBrowsers = require('./browserstack.browsers');
+import webpackConfig from './webpack.config.js';
+import { filter } from './browserstack.browsers';
 
 
 function findTests(context) {
   if (context !== 'browser') {
     return {};
   }
-  var files = glob.sync('test/**/!(server.)*.test.js');
+  var files = sync('test/**/!(server.)*.test.js');
   var mapping = {};
 
   files.forEach(function(file) {
-    var testName = path.basename(file, '.test.js');
+    var testName = basename(file, '.test.js');
     mapping[testName] = file;
   });
 
@@ -108,7 +108,7 @@ function buildGruntKarmaConfig(singleRun, browsers, tests, reporters) {
 }
 
 
-module.exports = function(grunt) {
+export default function(grunt) {
   require('time-grunt')(grunt);
 
   var browserTests = findTests('browser');
@@ -126,7 +126,7 @@ module.exports = function(grunt) {
       }
     });
 
-    var expandedBrowsers = browserStackBrowsers.filter.apply(null, browserStackAliases);
+    var expandedBrowsers = filter.apply(null, browserStackAliases);
     var expandedBrowserNames = [];
     expandedBrowsers.forEach(function(browser) {
       expandedBrowserNames.push(browser._alias);
@@ -150,8 +150,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-vows');
 
 
-  var rollbarJsSnippet = fs.readFileSync('dist/rollbar.snippet.js');
-  var rollbarjQuerySnippet = fs.readFileSync('dist/plugins/jquery.min.js');
+  var rollbarJsSnippet = readFileSync('dist/rollbar.snippet.js');
+  var rollbarjQuerySnippet = readFileSync('dist/plugins/jquery.min.js');
 
   grunt.initConfig({
     pkg: pkg,
@@ -192,7 +192,7 @@ module.exports = function(grunt) {
           {
             from: new RegExp('(https://github\\.com/rollbar/rollbar\\.js/workflows/Rollbar\\.js%20CI/badge\\.svg\\?branch=v)([0-9a-zA-Z.-]+)'),
             to: function(match, index, fullText, captures) {
-              captures[1] = pkg.version;
+              captures[1] = _version;
               return captures.join('');
             }
           }
@@ -218,7 +218,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('copyrelease', function createRelease() {
-    var version = pkg.version;
+    var version = _version;
     var builds = ['', '.umd'];
 
     builds.forEach(function (buildName) {

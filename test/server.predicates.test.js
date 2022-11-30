@@ -1,8 +1,8 @@
 "use strict";
 
-var assert = require('assert');
-var vows = require('vows');
-var p = require('../src/predicates');
+import assert from "assert";
+import vows from "vows";
+import p from "../src/predicates";
 
 vows.describe('predicates')
   .addBatch({

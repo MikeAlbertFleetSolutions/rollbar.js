@@ -1,6 +1,6 @@
-var url = require('url');
-var { URL } = require('url');
-var merge = require('../../merge');
+import url from "url";
+import { URL } from "url";
+import merge from "../../merge";
 
 // This function replicates the relevant logic in node/lib/http.js as closely
 // as possible in order to produce the same result. Therefore, the code is

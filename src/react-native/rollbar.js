@@ -1,18 +1,18 @@
-var packageJson = require('../../package.json');
-var Client = require('../rollbar');
-var _ = require('../utility');
-var API = require('../api');
-var logger = require('./logger');
+import packageJson from "../../package.json";
+import Client from "../rollbar";
+import _ from "../utility";
+import API from "../api";
+import logger from "./logger";
 
-var Transport = require('./transport');
-var urllib = require('../browser/url');
+import Transport from "./transport";
+import urllib from "../browser/url";
 
-var Telemeter = require('../telemetry');
-var transforms = require('./transforms');
-var sharedTransforms = require('../transforms');
-var sharedPredicates = require('../predicates');
-var truncation = require('../truncation');
-var polyfillJSON = require('../../vendor/JSON-js/json3');
+import Telemeter from "../telemetry";
+import transforms from "./transforms";
+import sharedTransforms from "../transforms";
+import sharedPredicates from "../predicates";
+import truncation from "../truncation";
+import polyfillJSON from "../../vendor/JSON-js/json3";
 
 function Rollbar(options, client) {
   if (_.isType(options, 'string')) {

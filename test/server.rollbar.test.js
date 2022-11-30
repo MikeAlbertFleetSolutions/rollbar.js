@@ -1,11 +1,11 @@
 'use strict';
 
-var assert = require('assert');
-var vows = require('vows');
-var sinon = require('sinon');
+import assert from "assert";
+import vows from "vows";
+import sinon from "sinon";
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'test-node-env';
-var Rollbar = require('../src/server/rollbar');
+import Rollbar from "../src/server/rollbar";
 
 const DUMMY_TRACE_ID = 'some-trace-id';
 const DUMMY_SPAN_ID = 'some-span-id';

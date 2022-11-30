@@ -1,4 +1,4 @@
-var _ = require('../utility');
+import _ from "../utility";
 
 function checkIgnore(item, settings) {
   if (_.get(settings, 'plugins.jquery.ignoreAjaxErrors')) {

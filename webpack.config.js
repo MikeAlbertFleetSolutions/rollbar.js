@@ -1,12 +1,12 @@
-var extend = require('util')._extend;
-var path = require('path');
-var webpack = require('webpack');
-var defaults = require('./defaults');
-var TerserPlugin = require('terser-webpack-plugin');
+import { _extend as extend } from 'util';
+import { resolve } from 'path';
+import { DefinePlugin } from 'webpack';
+import defaults from './defaults';
+import TerserPlugin from 'terser-webpack-plugin';
 
-var outputPath = path.resolve(__dirname, 'dist');
+var outputPath = resolve(__dirname, 'dist');
 
-var defaultsPlugin = new webpack.DefinePlugin(defaults);
+var defaultsPlugin = new DefinePlugin(defaults);
 var uglifyPlugin = new TerserPlugin({
   sourceMap: true,
   parallel: true
@@ -31,7 +31,7 @@ var snippetConfig = {
         exclude: [/node_modules/, /vendor/],
         options: {
           failOnError: true,
-          configFile: path.resolve(__dirname, '.eslintrc')
+          configFile: resolve(__dirname, '.eslintrc')
         }
       },
       {
@@ -62,7 +62,7 @@ var pluginConfig = {
         exclude: [/node_modules/, /vendor/],
         options: {
           failOnError: true,
-          configFile: path.resolve(__dirname, '.eslintrc')
+          configFile: resolve(__dirname, '.eslintrc')
         }
       },
       {
@@ -92,7 +92,7 @@ var vanillaConfigBase = {
         exclude: [/node_modules/, /vendor/],
         options: {
           failOnError: true,
-          configFile: path.resolve(__dirname, '.eslintrc')
+          configFile: resolve(__dirname, '.eslintrc')
         }
       },
       {
@@ -124,7 +124,7 @@ var UMDConfigBase = {
         exclude: [/node_modules/, /vendor/],
         options: {
           failOnError: true,
-          configFile: path.resolve(__dirname, '.eslintrc')
+          configFile: resolve(__dirname, '.eslintrc')
         }
       },
       {
@@ -229,4 +229,4 @@ function generateBuildConfig(name, plugins, minimizer) {
 generateBuildConfig('[name].js', []);
 generateBuildConfig('[name].min.js', [], uglifyPlugin);
 
-module.exports = config;
+export default config;

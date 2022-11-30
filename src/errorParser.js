@@ -1,4 +1,4 @@
-var ErrorStackParser = require('error-stack-parser');
+import ErrorStackParser from "error-stack-parser";
 
 var UNKNOWN_FUNCTION = '?';
 var ERR_CLASS_REGEXP = new RegExp('^(([a-zA-Z0-9-_$ ]*): *)?(Uncaught )?([a-zA-Z0-9-_$ ]*): ');

@@ -1,5 +1,5 @@
-var _ = require('./utility');
-var helpers = require('./apiUtility');
+import _ from "./utility";
+import helpers from "./apiUtility";
 
 var defaultOptions = {
   hostname: 'api.rollbar.com',

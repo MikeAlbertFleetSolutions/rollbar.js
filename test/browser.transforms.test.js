@@ -3,8 +3,8 @@
 /* globals it */
 /* globals sinon */
 
-var Rollbar = require('../src/browser/rollbar');
-var t = require('../src/browser/transforms');
+import Rollbar from "../src/browser/rollbar";
+import t from "../src/browser/transforms";
 
 function TestClientGen() {
   var TestClient = function() {
@@ -529,7 +529,7 @@ describe('scrubPayload', function() {
     expect(payload.data.custom.okay).to.eql('fizz=buzz&fuzz=baz');
     expect(payload.data.custom.user.id).to.eql(42);
 
-    var scrub = require('../src/scrub');
+import scrub from "../src/scrub";
     (t.addScrubber(scrub))(payload, options, function(e, i) {
       expect(i.access_token).to.eql(accessToken);
       expect(i.data.custom.scooby).to.not.eql('doo');

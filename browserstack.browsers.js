@@ -1,4 +1,4 @@
-var request = require('request');
+import { get } from 'request';
 
 var BROWSERSTACK_BROWSERS_ENDPOINT = 'https://www.browserstack.com/automate/browsers.json'
 
@@ -101,7 +101,7 @@ function download(username, accessKey, callback) {
     json: true
   };
 
-  request.get(req, function(err, resp, body) {
+  get(req, function(err, resp, body) {
     if (err || resp.statusCode != 200) {
       return callback(err || new Error('Received non 200 response from BrowserStack: ' + resp.statusCode));
     }
@@ -146,8 +146,6 @@ function filter() {
 }
 
 
-module.exports = {
-  _browsers: browsers,
-  download: download,
-  filter: filter,
-};
+export const _browsers = browsers;
+export const download = download;
+export const filter = filter;

@@ -1,5 +1,5 @@
-var logger = require('../logger');
-var _ = require('../../utility');
+import logger from "../logger";
+import _ from "../../utility";
 
 function makeFetchRequest(accessToken, url, method, data, callback, timeout) {
   var controller;

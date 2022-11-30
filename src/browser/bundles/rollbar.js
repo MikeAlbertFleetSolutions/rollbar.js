@@ -1,4 +1,4 @@
-var rollbar = require('../rollbar');
+import rollbar from "../rollbar";
 
 var options = (typeof window !== 'undefined') && window._rollbarConfig;
 var alias = options && options.globalAlias || 'Rollbar';

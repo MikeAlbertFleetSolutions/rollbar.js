@@ -3,10 +3,10 @@
 /* globals it */
 /* globals sinon */
 
-var truncation = require('../src/truncation');
-var Transport = require('../src/react-native/transport');
+import truncation from "../src/truncation";
+import Transport from "../src/react-native/transport";
 var t = new Transport(truncation);
-var utility = require('../src/utility');
+import utility from "../src/utility";
 utility.setupJSON();
 
 describe('post', function() {

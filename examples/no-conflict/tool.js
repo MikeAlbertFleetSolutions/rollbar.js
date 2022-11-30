@@ -1,5 +1,5 @@
 // Use noconflict so we can embed rollbar.js in this library
-var Rollbar = require('rollbar/dist/rollbar.noconflict.umd');
+import Rollbar from "rollbar/dist/rollbar.noconflict.umd";
 
 const rollbar = new Rollbar({
   accessToken: 'POST_CLIENT_ITEM_TOKEN',

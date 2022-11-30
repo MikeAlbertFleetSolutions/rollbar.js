@@ -1,6 +1,6 @@
-var _ = require('../utility');
-var scrub = require('../scrub');
-var errorParser = require('../errorParser');
+import _ from "../utility";
+import scrub from "../scrub";
+import errorParser from "../errorParser";
 
 function baseData(item, options, callback) {
   var environment = (options.payload && options.payload.environment) || options.environment;

@@ -1,8 +1,8 @@
-var _ = require('../utility');
-var headers = require('../utility/headers');
-var scrub = require('../scrub');
-var urlparser = require('./url');
-var domUtil = require('./domUtility');
+import _ from "../utility";
+import headers from "../utility/headers";
+import scrub from "../scrub";
+import urlparser from "./url";
+import domUtil from "./domUtility";
 
 var defaults = {
   network: true,

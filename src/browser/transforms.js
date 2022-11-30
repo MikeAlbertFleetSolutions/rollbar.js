@@ -1,6 +1,6 @@
-var _ = require('../utility');
-var errorParser = require('../errorParser');
-var logger = require('./logger');
+import _ from "../utility";
+import errorParser from "../errorParser";
+import logger from "./logger";
 
 function handleDomException(item, options, callback) {
   if(item.err && errorParser.Stack(item.err).name === 'DOMException') {

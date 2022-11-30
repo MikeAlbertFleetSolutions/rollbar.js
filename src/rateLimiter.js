@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 /*
  * RateLimiter - an object that encapsulates the logic for counting items sent to Rollbar

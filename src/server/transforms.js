@@ -1,9 +1,9 @@
-var async = require('async');
-var parser = require('./parser');
-var requestIp = require('request-ip');
-var url = require('url');
-var _ = require('../utility');
-var scrub = require('../scrub');
+import async from "async";
+import parser from "./parser";
+import requestIp from "request-ip";
+import url from "url";
+import _ from "../utility";
+import scrub from "../scrub";
 
 function baseData(item, options, callback) {
   var environment = (options.payload && options.payload.environment) || options.environment;

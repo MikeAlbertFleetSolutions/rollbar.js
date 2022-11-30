@@ -1,10 +1,10 @@
-var _ = require('../utility');
-var truncation = require('../truncation');
-var logger = require('./logger');
+import _ from "../utility";
+import truncation from "../truncation";
+import logger from "./logger";
 
-var http = require('http');
-var https = require('https');
-var jsonBackup = require('json-stringify-safe');
+import http from "http";
+import https from "https";
+import jsonBackup from "json-stringify-safe";
 
 var MAX_RATE_LIMIT_INTERVAL = 60;
 

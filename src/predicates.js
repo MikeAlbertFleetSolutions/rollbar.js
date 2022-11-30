@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 function checkLevel(item, settings) {
   var level = item.level;

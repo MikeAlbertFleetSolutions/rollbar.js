@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 /*
  * Queue - an object which handles which handles a queue of items to be sent to Rollbar.

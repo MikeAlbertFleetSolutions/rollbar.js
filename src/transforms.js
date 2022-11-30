@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 function itemToPayload(item, options, callback) {
   var payloadOptions = options.payload || {};

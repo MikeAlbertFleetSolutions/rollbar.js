@@ -1,9 +1,9 @@
 "use strict";
 
-var assert = require('assert');
-var util = require('util');
-var vows = require('vows');
-var Transport = require('../src/server/transport');
+import assert from "assert";
+import util from "util";
+import vows from "vows";
+import Transport from "../src/server/transport";
 var t = new Transport();
 
 vows.describe('transport')

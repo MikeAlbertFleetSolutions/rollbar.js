@@ -1,8 +1,8 @@
 /* global __DEFAULT_ROLLBARJS_URL__:false */
 /* global _rollbarConfig:true */
 
-var Shim = require('../shim');
-var snippetCallback = require('../snippet_callback');
+import Shim from "../shim";
+import snippetCallback from "../snippet_callback";
 
 _rollbarConfig = _rollbarConfig || {};
 _rollbarConfig.rollbarJsUrl = _rollbarConfig.rollbarJsUrl || __DEFAULT_ROLLBARJS_URL__;

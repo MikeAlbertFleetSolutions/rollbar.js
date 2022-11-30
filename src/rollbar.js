@@ -1,7 +1,7 @@
-var RateLimiter = require('./rateLimiter');
-var Queue = require('./queue');
-var Notifier = require('./notifier');
-var _ = require('./utility');
+import RateLimiter from "./rateLimiter";
+import Queue from "./queue";
+import Notifier from "./notifier";
+import _ from "./utility";
 
 /*
  * Rollbar - the interface to Rollbar

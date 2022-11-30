@@ -1,4 +1,4 @@
-var _ = require('./utility');
+import _ from "./utility";
 
 function buildPayload(accessToken, data, jsonBackup) {
   if (!_.isType(data.context, 'string')) {

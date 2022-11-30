@@ -1,14 +1,14 @@
 'use strict';
 
-var assert = require('assert');
-var vows = require('vows');
-var sinon = require('sinon');
-var nock = require('nock');
-var http = require('http');
-var https = require('https');
+import assert from "assert";
+import vows from "vows";
+import sinon from "sinon";
+import nock from "nock";
+import http from "http";
+import https from "https";
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'test-node-env';
-var Rollbar = require('../src/server/rollbar');
+import Rollbar from "../src/server/rollbar";
 
 function wait(ms) {
   return new Promise(resolve => {
